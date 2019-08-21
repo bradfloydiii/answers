@@ -5,21 +5,27 @@ let cors = require('cors');
 const port = process.env.PORT || 3000;
 const app = express();
 
+const result = {
+  message: 'Result from ExpressJS',
+  data: {
+    name: 'Bradley Floyd III',
+    company: 'Perficient Inc.',
+    position: 'Lead Tech Consultant'
+  }
+}
+
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use((req, res, next) => {
-  res.header('Content-Type', 'application-json');
-  next();
-})
-
 app.get('/', (req, res) => {
-  res.status(200).send(JSON.stringify({message: 'Express works'}));
+  res.status(200).send('Perficient');
 });
 
-app.get('/interview', (req, res) => {
-  res.status(200).send('Interview works');
+app.get('/data', (req, res) => {
+  res.json(result);
 });
+
+
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))
 
