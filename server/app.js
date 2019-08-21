@@ -8,9 +8,9 @@ const app = express();
 const result = {
   message: 'Result from ExpressJS',
   data: {
-    name: 'Bradley Floyd III',
-    company: 'Perficient Inc.',
-    position: 'Lead Tech Consultant'
+    name: 'Zander Waldman',
+    company: 'MRM',
+    position: 'Director'
   }
 }
 

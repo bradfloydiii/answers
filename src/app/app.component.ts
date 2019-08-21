@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
+import { Employee } from './employee';
 
 
 @Component({
@@ -11,9 +12,13 @@ export class AppComponent implements OnInit {
 
   dataReceived = false;
 
-  result = {
+  result: Employee = {
     message: 'Waiting for results',
-    data: {}
+    data: {
+      name: '',
+      company: '',
+      position: ''
+    }
   };
 
   constructor(private service: AppService) {}
